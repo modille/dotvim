@@ -10,3 +10,9 @@
 [submodule "bundle/unite"]
 	path = bundle/unite
 	url = https://github.com/Shougo/unite.vim.git
+[submodule "bundle/rails"]
+	path = bundle/rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "bundle/bundler"]
+	path = bundle/bundler
+	url = https://github.com/tpope/vim-bundler.git
