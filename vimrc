@@ -20,3 +20,8 @@ set tabstop=4 shiftwidth=4 expandtab
 
 "Show line numbers
 set number
+
+"Airline
+let g:bufferline_echo = 0
+set noshowmode
+set laststatus=2
