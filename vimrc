@@ -45,6 +45,14 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 nnoremap r :Unite -start-insert file_rec<CR>
 nnoremap <silent> <leader>b :<C-u>Unite buffer bookmark<CR>
 
+"" Session
+"Auto-save on exit
+let g:session_autosave = "yes"
+"Save every minute (just in case...)
+let g:session_autosave_periodic = 1
+"Open most recent session, instead of default
+let g:session_default_to_last = 1
+
 "" Markdown highlighting
 augroup mkd
   autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:&gt;
