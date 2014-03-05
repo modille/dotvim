@@ -39,6 +39,10 @@ set laststatus=2
 "Hide default mode display
 set noshowmode
 
+"" Nerdtree
+nmap <silent> <Leader>nt :NERDTreeToggle<CR>
+nmap <silent> <Leader>nc :NERDTreeCWD<CR>
+
 "" Unite
 "Similar to Control-Shift-R in Eclipse
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -62,6 +66,8 @@ augroup END
 "Ctrl-C for Copy, etc.
 source $VIMRUNTIME/mswin.vim
 behave mswin
+"Change cwd to current file
+map <Leader>cd :cd %:p:h<CR>
 
 "" Make auto-complete behave more *nix-like
 set wildmode=longest:full
