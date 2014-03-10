@@ -67,6 +67,9 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 "Change cwd to current file
 map <Leader>cd :cd %:p:h<CR>
+"F7 to toggle spellcheck
+imap <F7> <C-o>:setlocal spell! spelllang=en_us<CR>
+nn <F7> :setlocal spell! spell? spelllang=en_us<CR>
 
 "" Make auto-complete behave more *nix-like
 set wildmode=longest:full
