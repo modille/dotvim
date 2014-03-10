@@ -5,6 +5,7 @@ call pathogen#helptags()
 "" Colors
 syntax enable
 colorscheme badwolf
+set colorcolumn=120
 
 "" Fonts
 if has("gui_running")
@@ -58,9 +59,7 @@ let g:session_autosave_periodic = 1
 let g:session_default_to_last = 1
 
 "" Markdown highlighting
-augroup mkd
-  autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:&gt;
-augroup END
+au BufRead,BufNewFile *.md set syntax=markdown
 
 "" Miscellaneous shortcuts
 "Ctrl-C for Copy, etc.
