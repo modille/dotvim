@@ -9,11 +9,11 @@ set colorcolumn=120
 
 "" Folding
 set foldmethod=syntax
-set nofoldenable "don't fold by default
+set nofoldenable "Don't fold by default
 
 "" Fonts
-if has("gui_running")
-  if has("gui_win32")
+if has('gui_running')
+  if has('gui_win32')
     set guifont=Bitstream_Vera_Sans_Mono:h16:cANSI
   else
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline
@@ -27,7 +27,7 @@ set tabstop=2 shiftwidth=2 expandtab
 set number
 
 "" Leader key
-let mapleader = ","
+let mapleader = ','
 
 "" Disable toolbar
 set guioptions-=T
@@ -44,27 +44,45 @@ nmap <silent> <Leader>nt :NERDTreeToggle<CR>
 nmap <silent> <Leader>nc :NERDTreeCWD<CR>
 
 "" Unite
-"Similar to Control-Shift-R in Eclipse
-nnoremap r :Unite -start-insert file_rec/async<CR>
-nnoremap <silent> <leader>b :<C-u>Unite buffer bookmark<CR>
-let g:unite_data_directory='~/.vim/.cache/unite'
-let g:unite_enable_start_insert=1
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
-call unite#custom_source('file_rec,file_rec/async', 'max_candidates', 0)
+call unite#filters#sorter_default#use(['sorter_rank'])
+"Allow yank history searching
+let g:unite_source_history_yank_enable = 1
+let g:unite_data_directory = '~/.vim/.cache/unite'
+"let g:unite_enable_start_insert = 1
+"Use Silver Searcher for grepping
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+"Ignore patterns
 call unite#custom_source('file_rec,file_rec/async,grep',
       \ 'ignore_pattern', join([
       \ '\.git/',
       \ '\.svn/',
       \ '\.yardoc/',
-      \ 'tmp/',
-      \ 'tags',
-      \ '.*\.log',
       \ 'doc/.*/.*\.html',
+      \ '.*\.log',
+      \ 'tags/',
+      \ 'tmp/',
+      \ '.*/translations.js',
       \ ], '\|'))
+call unite#custom_source('file_rec,file_rec/async', 'max_candidates', 0)
+"r = Find file by name
+nnoremap r :Unite file_rec/async<CR>
+"b = List buffers
+nnoremap b :Unite buffer bookmark<CR>
+"g = Grep
+nnoremap g :Unite grep:.<CR>
+"o = Outline
+nnoremap o :Unite -start-insert -vertical -auto-preview outline<CR>
+"y = Yank history
+nnoremap y :Unite history/yank<CR>
 
 "" Session
 "Auto-save on exit
-let g:session_autosave = "yes"
+let g:session_autosave = 'yes'
 "Save every minute (just in case...)
 let g:session_autosave_periodic = 1
 "Open most recent session, instead of default
@@ -102,3 +120,6 @@ autocmd BufWinLeave *.rb call clearmatches()
 " :marks - Display all the bookmarks
 " Note: Upper-case bookmark names are global, else local
 
+"" Jump through history (default vim behavior)
+" <C-o> - Jump to previous
+" <C-i> - Jump forward
