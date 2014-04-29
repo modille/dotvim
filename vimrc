@@ -70,15 +70,15 @@ call unite#custom_source('file_rec,file_rec/async,grep',
       \ ], '\|'))
 call unite#custom_source('file_rec,file_rec/async', 'max_candidates', 0)
 "r = Find file by name
-nnoremap r :Unite file_rec/async<CR>
+nnoremap <silent> <Leader>r :Unite file_rec/async<CR>
 "b = List buffers
-nnoremap b :Unite buffer bookmark<CR>
+nnoremap <silent> <Leader>b :Unite buffer bookmark<CR>
 "g = Grep
-nnoremap g :Unite grep:.<CR>
+nnoremap <silent> <Leader>g :Unite grep:.<CR>
 "o = Outline
-nnoremap o :Unite -start-insert -vertical -auto-preview outline<CR>
+nnoremap <silent> <Leader>o :Unite -start-insert -vertical -auto-preview outline<CR>
 "y = Yank history
-nnoremap y :Unite history/yank<CR>
+nnoremap <silent> <Leader>y :Unite history/yank<CR>
 
 "" Session
 "Auto-save on exit
