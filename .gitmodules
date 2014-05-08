@@ -52,3 +52,6 @@
 [submodule "bundle/unimpaired"]
 	path = bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "bundle/jekyll"]
+	path = bundle/jekyll
+	url = https://github.com/parkr/vim-jekyll.git
