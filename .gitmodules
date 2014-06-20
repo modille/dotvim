@@ -55,3 +55,6 @@
 [submodule "bundle/jekyll"]
 	path = bundle/jekyll
 	url = https://github.com/parkr/vim-jekyll.git
+[submodule "bundle/YouCompleteMe"]
+	path = bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
