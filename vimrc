@@ -128,6 +128,11 @@ autocmd BufWinLeave *.rb call clearmatches()
 " <C-o> - Jump to previous
 " <C-i> - Jump forward
 
+"" XML editing
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+map <Leader>fx !%xmllint --format --recover -
+
 "" Disable toolbar and menu
 set guioptions-=mcheme
 set guioptions-=T
