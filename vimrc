@@ -29,9 +29,6 @@ set number
 "" Leader key
 let mapleader = ','
 
-"" Disable toolbar
-set guioptions-=T
-
 "" Hide abandoned buffers instead of unloading (preserves undo history)
 set hidden
 
@@ -130,3 +127,9 @@ autocmd BufWinLeave *.rb call clearmatches()
 "" Jump through history (default vim behavior)
 " <C-o> - Jump to previous
 " <C-i> - Jump forward
+
+"" Disable toolbar and menu
+set guioptions-=mcheme
+set guioptions-=T
+set guioptions-=m
+set guioptions-=M
