@@ -1,3 +1,20 @@
+if has('vim_starting')
+ set runtimepath+=~/.vim/bundle/neobundle/
+endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" My Bundles here:
+call neobundle#end()
+
+filetype plugin indent on
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
 "" Colors
 syntax enable
 colorscheme badwolf
