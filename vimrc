@@ -139,6 +139,7 @@ let g:session_autosave = 'yes'
 let g:session_autosave_periodic = 1
 "Open most recent session, instead of default
 let g:session_default_to_last = 1
+let g:session_autoload = 'yes'
 
 "" Markdown highlighting
 au BufRead,BufNewFile *.md set syntax=markdown
