@@ -1,12 +1,47 @@
 if has('vim_starting')
  set runtimepath+=~/.vim/bundle/neobundle/
 endif
+
 call neobundle#begin(expand('~/.vim/bundle/'))
 
-" Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" My Bundles here:
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'h1mesuke/unite-outline'
+NeoBundle 'nathanaelkane/vim-indent-guides', {
+NeoBundle 'parkr/vim-jekyll'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'roman/golden-ratio'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+\   'build': {
+\     'cygwin':  'make -f make_cygwin.mak',
+\     'mac':     'make -f make_mac.mak',
+\     'unix':    'make -f make_unix.mak',
+\     'windows': 'make -f make_mingw32.mak'
+\   }
+\ }
+NeoBundle 'sjl/badwolf'
+NeoBundle 'tpope/vim-bundler'
+NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'Valloric/YouCompleteMe', {
+\   'build': {
+\     'mac':  './install.sh --clang-completer',
+\     'unix': './install.sh --clang-completer'
+\   }
+\ }
+NeoBundle 'wting/rust.vim'
+NeoBundle 'xolox/vim-misc'
+NeoBundle 'xolox/vim-session'
+
 call neobundle#end()
 
 filetype plugin indent on
