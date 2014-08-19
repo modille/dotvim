@@ -9,7 +9,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'h1mesuke/unite-outline'
-NeoBundle 'nathanaelkane/vim-indent-guides', {
+NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'parkr/vim-jekyll'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'roman/golden-ratio'
@@ -33,6 +33,7 @@ NeoBundle 'tpope/vim-rails'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'Valloric/YouCompleteMe', {
+\   'build_commands': 'cmake',
 \   'build': {
 \     'mac':  './install.sh --clang-completer',
 \     'unix': './install.sh --clang-completer'

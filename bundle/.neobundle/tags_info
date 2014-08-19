@@ -14,6 +14,7 @@ vim-commentary
 vim-endwise
 vim-fugitive
 vim-gitgutter
+vim-indent-guides
 vim-jekyll
 vim-misc
 vim-rails
