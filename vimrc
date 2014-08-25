@@ -83,10 +83,10 @@ set hidden
 
 "" Airline
 let g:airline_powerline_fonts = 1 "Add powerline fonts to the dictionary
-let g:airline_section_y = ""      "Hide the file encoding info
+let g:airline_section_y = 'BN: %{bufnr("%")}' "Replace file encoding info with buffer number
 let g:bufferline_echo = 0
-set laststatus=2                  "Have airline show up without having to split
-set noshowmode                    "Hide default mode display
+set laststatus=2 "Have airline show up without having to split
+set noshowmode   "Hide default mode display
 
 "" Indent Guides
 let g:indent_guides_start_level=2
