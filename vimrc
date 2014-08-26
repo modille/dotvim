@@ -88,9 +88,12 @@ let g:bufferline_echo = 0
 set laststatus=2 "Have airline show up without having to split
 set noshowmode   "Hide default mode display
 
+"" Golden Ratio
+let g:golden_ratio_exclude_nonmodifiable = 1
+
 "" Indent Guides
-let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 "" Nerdtree
 nmap <silent> <Leader>nt :NERDTreeToggle<CR>
