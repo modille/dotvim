@@ -12,7 +12,7 @@ NeoBundle 'h1mesuke/unite-outline'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'parkr/vim-jekyll'
 NeoBundle 'rking/ag.vim'
-NeoBundle 'roman/golden-ratio'
+NeoBundle 'rstacruz/sparkup'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'Shougo/unite.vim'
@@ -37,11 +37,13 @@ NeoBundle 'Valloric/YouCompleteMe', {
 \   'build': {
 \     'mac':  './install.sh --clang-completer',
 \     'unix': './install.sh --clang-completer'
-\   }
+\   },
+\   'rev': '57b1ae12'
 \ }
 NeoBundle 'wting/rust.vim'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'xolox/vim-session'
+NeoBundle 'zhaocai/GoldenView.Vim'
 
 call neobundle#end()
 
@@ -69,6 +71,11 @@ if has('gui_running')
   endif
 endif
 
+" Don't use swap files
+set noswapfile
+set nobackup
+set nowb
+
 "" Tab spacing = 2, soft
 set tabstop=2 shiftwidth=2 expandtab
 
@@ -87,9 +94,6 @@ let g:airline_section_y = 'BN: %{bufnr("%")}' "Replace file encoding info with b
 let g:bufferline_echo = 0
 set laststatus=2 "Have airline show up without having to split
 set noshowmode   "Hide default mode display
-
-"" Golden Ratio
-let g:golden_ratio_exclude_nonmodifiable = 1
 
 "" Indent Guides
 let g:indent_guides_start_level = 2
@@ -145,6 +149,9 @@ let g:session_autosave_periodic = 1
 let g:session_default_to_last = 1
 let g:session_autoload = 'yes'
 
+"" Syntastic
+let g:syntastic_javascript_closure_compiler_path = '~/bin/compiler.jar'
+
 "" Markdown highlighting
 au BufRead,BufNewFile *.md set syntax=markdown
 
@@ -180,6 +187,9 @@ autocmd BufWinLeave *.rb call clearmatches()
 "" Jump through history (default vim behavior)
 " <C-o> - Jump to previous
 " <C-i> - Jump forward
+
+"" Gradle editing
+au BufNewFile,BufRead *.gradle set filetype=groovy
 
 "" XML editing
 let g:xml_syntax_folding=1
